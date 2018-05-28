@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>
+   <title>films</title>
+   <base href="http://localhost/annuaire_films/"/>
+</head>
+<body>
+    <header>
+        <h1>Exemple d'appli</h1>
+    </header>
+    <ul>
+        {% for film in films  %}
+            <li><a href="film/{{ film.slug }}">{{ film.titre }}</a></li>
+        {% endfor %}  
+    </ul>
+    <footer>
+      <p>Pied de page...</p>
+    </footer>
+</body>
+
+
+</html>
+
+
+
+
