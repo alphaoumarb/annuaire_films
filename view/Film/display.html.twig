@@ -12,7 +12,16 @@
    <p>{{ film.synopsis }}</p>
    <img src="{{ film.images }}" alt="{{ film.titre }}">
    <p>{{ film.annee }}</p>
-   
+   <p>Genres :
+    {% for genre in genres %}
+        {{ genre.genre }} {% if loop.last == false %} / {% endif %}
+    {% endfor %}
+   </p>
+    <p>Realisateurs :
+    {% for realisateur in realisateurs %}
+        {{ realisateur.realisateurs }} {% if loop.last == false %} / {% endif %}
+    {% endfor %}
+   </p>
    <footer>
       <p>Pied de page...</p>
    </footer>
