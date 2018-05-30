@@ -1,22 +1,67 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta charset="utf-8"/>
-   <title>films</title>
-   <base href="http://localhost/annuaire_films/"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+     <base href="http://localhost/annuaire_films/"/>
+
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-    <header>
-        <h1>Exemple d'appli</h1>
-    </header>
-    <ul>
-        {% for film in films  %}
-            <li><a href="film/{{ film.slug }}">{{ film.titre }}</a></li>
+
+
+  <nav class="color-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot color-2 " id="index-banner">
+    <div class="container p-b">
+      <br><br>
+      <h3 class="header center white-text ">Films à l'affiche</h3>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+        <div class="row">
+            {% for film in films  %}
+                <div class="card-image small responsive-img">  <a href="film/{{ film.slug }}"><img  src = "{{ film.images }}" class ="h-400 w-100pct col s12 m4" /></a></div>
+            {% endfor %}  
+        </div>
+        <br><br>
+    </div>
+
+ <h3 class="header center">Tous nos films</h3>
+
+ <div class="row">
+        {% for film in allfilms  %}
+            <div class="p-b-5px  h-250 card-image small responsive-img col s6 m2">  <a href="film/{{ film.slug }}"><img  src = "{{ film.images }}" class ="h-100pct w-100pct " /></a>
+            </div>
         {% endfor %}  
-    </ul>
-    <footer>
-      <p>Pied de page...</p>
-    </footer>
+    </div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+
 </body>
 
 

@@ -50,7 +50,21 @@ public static function getRealFromFilm($id_film) {
 
    }
 
+
+   public static function getAllFilms() {
+    $db = Database::getInstance();
+    $sql = "SELECT * FROM films order by rand()";
+    $stmt = $db->query($sql);
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll();
+
+ }
+
+
 }
+
+
+
 
 
 

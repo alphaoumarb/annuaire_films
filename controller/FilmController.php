@@ -7,12 +7,11 @@ class FilmController extends Controller {
         $genres = Film::getGenderFromFilm($film['id_films']);
         $realisateurs = Film::getRealFromFilm($film['id_films']);
 
-
         $template = $this->twig->loadTemplate('/Film/display.html.twig');
         echo $template->render(array(
             'film'  => $film,
             'genres' => $genres,
-            'realisateurs'=> $realisateurs,
+            'realisateurs'=> $realisateurs
         ));
     }
 }
